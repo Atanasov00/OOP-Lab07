@@ -1,8 +1,5 @@
 package it.unibo.oop.lab.nesting1;
 
-import java.util.Set;
-
-import it.unibo.oop.lab.nesting1.SportSocialNetworkUserImpl.Sport;
 import it.unibo.oop.lab.socialnetwork.User;
 
 /**
@@ -44,16 +41,9 @@ public final class TestSportByStaticInnerClass {
          * 
          * ...
          */
-        
         falonso.addSport(SportSocialNetworkUserImpl.F1);
         falonso.addSport(SportSocialNetworkUserImpl.BIKE);
         falonso.addSport(SportSocialNetworkUserImpl.SOCCER);
-        
-        Sport sport1 = SportSocialNetworkUserImpl.SOCCER;
-        Set<Sport> sports = falonso.getSports();
-        for(Sport t: sports) {
-        	System.out.println(t.equals(sport1));
-        }
         
         System.out.println("Alonso practices F1: " + falonso.hasSport(SportSocialNetworkUserImpl.F1));
         System.out.println("Alonso does not like volley: " + !falonso.hasSport(SportSocialNetworkUserImpl.VOLLEY));
