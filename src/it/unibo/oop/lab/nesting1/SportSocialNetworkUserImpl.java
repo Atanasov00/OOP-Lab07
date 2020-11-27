@@ -53,12 +53,12 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      * TODO: initialize properly these sports
      */
     static {
-        SOCCER = null;
-        F1 = null;
-        MOTOGP = null;
-        VOLLEY = null;
-        BASKET = null;
-        BIKE = null;
+        SOCCER = new Sport("Soccer");
+        F1 = new Sport("F1");
+        MOTOGP = new Sport("MotoGP");
+        VOLLEY = new Sport("Volley");
+        BASKET = new Sport("Basket");
+        BIKE = new Sport("Bike");
     }
 
     /**
@@ -114,7 +114,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      */
     // TODO
     public void addSport(final Sport sport) {
-
+    	sports.add(sport);
     }
 
     /**
@@ -126,7 +126,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      */
     // TODO
     public boolean hasSport(final Sport s) {
-        return false;
+        return sports.contains(s);
     }
 
     /*
@@ -135,8 +135,18 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      * Complete the definition of this static inner class defining a Sport along
      * with its bare name.
      */
+    
+    public Set<Sport> getSports(){
+    	return new HashSet(sports);
+    }
     public static final class Sport {
-        /*
+        
+    	private final String name;
+    	public Sport(final String name) {
+    		this.name = name;
+    	}
+    	
+    	/*
          * TODO
          * 
          * Redefine equals so that two sports are equal only if they feature the
@@ -144,7 +154,12 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
          */
         @Override
         public boolean equals(final Object o) {
-            return false;
+        	Sport var = (Sport)o;
+            return this.name.equals(var.getName());
         }
+
+		public String getName() {
+			return this.name;
+		}
     }
 }
