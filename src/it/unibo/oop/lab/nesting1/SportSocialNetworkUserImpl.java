@@ -136,9 +136,6 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      * with its bare name.
      */
     
-    public Set<Sport> getSports(){
-    	return new HashSet(sports);
-    }
     public static final class Sport {
         
     	private final String name;
