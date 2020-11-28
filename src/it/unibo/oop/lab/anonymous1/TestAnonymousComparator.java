@@ -80,7 +80,7 @@ public final class TestAnonymousComparator {
 
 			@Override
 			public int compare(User arg0, User arg1) {
-				return arg0.getAge() - arg1.getAge();
+				return Integer.compareUnsigned(arg0.getAge(), arg1.getAge());
 			}
         	
         });
@@ -116,7 +116,7 @@ public final class TestAnonymousComparator {
          */
         Collections.sort(rossiUsers, new Comparator<User>() {
 			public int compare(User arg0, User arg1) {
-				return arg1.getAge() - arg0.getAge();
+				return Integer.compareUnsigned(arg1.getAge(), arg0.getAge());
 			}
         });
         /*
